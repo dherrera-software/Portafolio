@@ -1,5 +1,8 @@
 import type { PersonalInfo, Project, TechCategory, Experience, Education } from '../types/portfolio';
 
+const base = import.meta.env.BASE_URL || './';
+const cleanBase = base.endsWith('/') ? base : `${base}/`;
+
 export const PERSONAL_INFO: PersonalInfo = {
   name: "Diego Herrera Rodríguez",
   shortName: "Diego Herrera",
@@ -17,7 +20,7 @@ export const PERSONAL_INFO: PersonalInfo = {
   github: "https://github.com/dherrera-software",
   githubUsername: "dherrera-software",
   linkedin: "https://linkedin.com/in/diego-herrera-282b3a432",
-  cvUrl: "/CV_Diego_Herrera.pdf",
+  cvUrl: `${cleanBase}CV_Diego_Herrera.pdf`,
 };
 
 export const PROJECTS: Project[] = [
@@ -27,7 +30,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Plataforma Web de Conversión Universal de Archivos",
     description:
       "Conversor de archivos de alta fidelidad construido en arquitectura monorepo desacoplada. Procesamiento veloz pensado para ejecutarse 100% sobre Cloudflare Workers con Hono en el backend y React 19 en el frontend. Soporta conversión de más de 35 formatos (documentos, imágenes, audio y datos estructurados: TXT, PDF, HTML, MD, JPG, PNG, CSV, TSV, JSON, XML) con validación MIME, políticas CORS y despliegue CI/CD automatizado.",
-    image: "/images/fileflow.png",
+    image: `${cleanBase}images/fileflow.png`,
     tags: [
       "React 19",
       "TypeScript",
@@ -54,7 +57,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Videojuego Arcade Retro con Estética CRT",
     description:
       "Reinvención nostálgica del clásico arcade con estética CRT interactiva, desarrollado con Phaser 4, TypeScript y Vite. Cuenta con modo 1 jugador contra IA con 4 niveles de dificultad desafiantes (NOOB, MEDIUM, HARD, INFERNO), modo 2 jugadores local, temporizador de 60 segundos con muerte súbita, incremento progresivo de velocidad de pelota, navegación total por teclado y audio persistente.",
-    image: "/images/pong.png",
+    image: `${cleanBase}images/pong.png`,
     tags: ["Phaser 4", "TypeScript", "Vite", "HTML5 Canvas", "GitHub Actions", "Web Audio API"],
     liveUrl: "https://dherrera-software.github.io/Pong/",
     githubUrl: "https://github.com/dherrera-software/Pong",
