@@ -1,0 +1,83 @@
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  /* Light Theme */
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --border: #e2e8f0;
+  --border-focus: #0ea5e9;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  --accent: #0284c7;
+  --accent-light: #e0f2fe;
+  --accent-secondary: #7c3aed;
+  --accent-secondary-light: #f5f3ff;
+  --tag-bg: #f1f5f9;
+  --tag-text: #334155;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.05);
+  --shadow-glow: 0 0 25px rgba(14, 165, 233, 0.15);
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --status-bg: #ecfdf5;
+  --status-border: #a7f3d0;
+  --status-text: #047857;
+
+  /* Terminal Colors (Light) */
+  --terminal-bg: rgba(248, 250, 252, 0.96);
+  --terminal-header: #e2e8f0;
+  --terminal-border: #cbd5e1;
+  --terminal-text: #0f172a;
+
+  /* Cursor Tokens */
+  --cursor-dot-color: #0284c7;
+  --cursor-ring-color: rgba(2, 132, 199, 0.45);
+  --cursor-ring-active: rgba(2, 132, 199, 0.2);
+  --cursor-glow: rgba(2, 132, 199, 0.6);
+}
+
+html.dark {
+  /* Dark Theme */
+  --bg-main: #080c14;
+  --bg-surface: #0e1526;
+  --bg-surface-elevated: #151f38;
+  --bg-card: #0f172a;
+  --bg-card-hover: #17233f;
+  --border: #1e293b;
+  --border-focus: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --accent: #38bdf8;
+  --accent-light: rgba(56, 189, 248, 0.12);
+  --accent-secondary: #a855f7;
+  --accent-secondary-light: rgba(168, 85, 247, 0.12);
+  --tag-bg: #1e293b;
+  --tag-text: #cbd5e1;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 14px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 30px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 35px rgba(56, 189, 248, 0.18);
+  --nav-bg: rgba(8, 12, 20, 0.82);
+  --status-bg: rgba(16, 185, 129, 0.12);
+  --status-border: rgba(16, 185, 129, 0.28);
+  --status-text: #34d399;
+
+  /* Terminal Colors (Dark) */
+  --terminal-bg: rgba(10, 15, 26, 0.95);
+  --terminal-header: #141f36;
+  --terminal-border: #1e293b;
+  --terminal-text: #38bdf8;
+
+  /* Cursor Tokens */
+  --cursor-dot-color: #38bdf8;
+  --cursor-ring-color: rgba(56, 189, 248, 0.5);
+  --cursor-ring-active: rgba(56, 189, 248, 0.25);
+  --cursor-glow: rgba(56, 189, 248, 0.8);
+}
+

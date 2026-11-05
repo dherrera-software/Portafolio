@@ -1,0 +1,215 @@
+/* =========================================
+   INTERACTIVE TERMINAL / COMMAND PALETTE
+   ========================================= */
+.terminal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: terminalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes terminalFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.terminal-modal {
+  width: 100%;
+  max-width: 680px;
+  background: var(--terminal-bg);
+  border: 1px solid var(--border-focus);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.25), 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+/* Terminal Window Header */
+.terminal-header {
+  background: var(--terminal-header);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+
+.terminal-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dot-control {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-block;
+}
+
+.dot-close { background: #ef4444; }
+.dot-minimize { background: #f59e0b; }
+.dot-maximize { background: #10b981; }
+
+.terminal-title {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.terminal-shortcut-hint {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  background: var(--bg-surface-elevated);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* Terminal Output Area */
+.terminal-body {
+  padding: 1.25rem;
+  overflow-y: auto;
+  flex: 1;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--text-main);
+  scroll-behavior: smooth;
+}
+
+.terminal-line {
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.terminal-prompt-user {
+  color: #38bdf8;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.terminal-command-echo {
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.terminal-output-text {
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  white-space: pre-wrap;
+}
+
+.terminal-project-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.3rem 0.4rem 0.3rem 0;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.terminal-project-chip:hover {
+  background: var(--accent-light);
+  border-color: var(--border-focus);
+  transform: translateY(-1px);
+}
+
+/* Prompt Input Line */
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: var(--terminal-header);
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* Command Suggestion Quick Chips */
+.terminal-suggestions-bar {
+  padding: 0.6rem 1.25rem;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.terminal-suggestion-chip {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
+}
+
+.terminal-suggestion-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Floating Terminal Trigger Button */
+.terminal-floating-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-focus);
+  color: var(--accent);
+  padding: 0.65rem 1.15rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.2);
+  cursor: pointer;
+  z-index: 40;
+  transition: all 0.25s ease;
+}
+
+.terminal-floating-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 25px rgba(56, 189, 248, 0.35);
+}
+
