@@ -1,12 +1,10 @@
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // Usa el nombre exacto de tu repositorio con barras al inicio y final
-  base: '/Portafolio/', 
+  base: '/Portafolio/', // Nombre exacto de tu repositorio
   build: {
     outDir: 'dist',
-    sourcemap: false,
   },
 })
