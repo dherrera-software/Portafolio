@@ -1,83 +1,113 @@
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Fira Code', monospace;
-  
-  /* Light Theme */
-  --bg-main: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #f1f5f9;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f8fafc;
-  --border: #e2e8f0;
-  --border-focus: #0ea5e9;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-subtle: #94a3b8;
-  --accent: #0284c7;
-  --accent-light: #e0f2fe;
-  --accent-secondary: #7c3aed;
-  --accent-secondary-light: #f5f3ff;
-  --tag-bg: #f1f5f9;
-  --tag-text: #334155;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.05);
-  --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.05);
-  --shadow-glow: 0 0 25px rgba(14, 165, 233, 0.15);
-  --nav-bg: rgba(255, 255, 255, 0.85);
-  --status-bg: #ecfdf5;
-  --status-border: #a7f3d0;
-  --status-text: #047857;
+  /* ─── Typography ─── */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Geist Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  /* ─── Spacing (4px base) ─── */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* ─── Border Radius ─── */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  /* ─── Transitions ─── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+
+  /* ─── Light Theme ─── */
+  --bg-main:              #ffffff;
+  --bg-surface:           #fafafa;
+  --bg-surface-elevated:  #f4f4f5;
+  --bg-card:              #ffffff;
+  --bg-card-hover:        #fafafa;
+  --border:               #e4e4e7;
+  --border-focus:         #a1a1aa;
+  --text-main:            #09090b;
+  --text-muted:           #3f3f46;
+  --text-subtle:          #71717a;
+  --text-faint:           #a1a1aa;
+  --accent:               #4f46e5;
+  --accent-hover:         #6366f1;
+  --accent-light:         rgba(79, 70, 229, 0.08);
+  --accent-secondary:     #6366f1;
+  --accent-secondary-light: rgba(99, 102, 241, 0.08);
+  --tag-bg:               #f4f4f5;
+  --tag-text:             #3f3f46;
+  --shadow-sm:            0 1px 2px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-md:            0 2px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03);
+  --shadow-lg:            0 4px 12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-glow:          0 0 24px rgba(79, 70, 229, 0.1);
+  --nav-bg:               rgba(255, 255, 255, 0.82);
+  --status-bg:            rgba(34, 197, 94, 0.08);
+  --status-border:        rgba(34, 197, 94, 0.2);
+  --status-text:          #16a34a;
 
   /* Terminal Colors (Light) */
-  --terminal-bg: rgba(248, 250, 252, 0.96);
-  --terminal-header: #e2e8f0;
-  --terminal-border: #cbd5e1;
-  --terminal-text: #0f172a;
+  --terminal-bg:          rgba(250, 250, 250, 0.96);
+  --terminal-header:      #e4e4e7;
+  --terminal-border:      #d4d4d8;
+  --terminal-text:        #09090b;
 
   /* Cursor Tokens */
-  --cursor-dot-color: #0284c7;
-  --cursor-ring-color: rgba(2, 132, 199, 0.45);
-  --cursor-ring-active: rgba(2, 132, 199, 0.2);
-  --cursor-glow: rgba(2, 132, 199, 0.6);
+  --cursor-dot-color:     #6366f1;
+  --cursor-ring-color:    rgba(99, 102, 241, 0.4);
+  --cursor-ring-active:   rgba(99, 102, 241, 0.2);
+  --cursor-glow:          rgba(99, 102, 241, 0.6);
 }
 
 html.dark {
-  /* Dark Theme */
-  --bg-main: #080c14;
-  --bg-surface: #0e1526;
-  --bg-surface-elevated: #151f38;
-  --bg-card: #0f172a;
-  --bg-card-hover: #17233f;
-  --border: #1e293b;
-  --border-focus: #38bdf8;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
-  --accent: #38bdf8;
-  --accent-light: rgba(56, 189, 248, 0.12);
-  --accent-secondary: #a855f7;
-  --accent-secondary-light: rgba(168, 85, 247, 0.12);
-  --tag-bg: #1e293b;
-  --tag-text: #cbd5e1;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
-  --shadow-md: 0 4px 14px rgba(0,0,0,0.5);
-  --shadow-lg: 0 12px 30px rgba(0,0,0,0.6);
-  --shadow-glow: 0 0 35px rgba(56, 189, 248, 0.18);
-  --nav-bg: rgba(8, 12, 20, 0.82);
-  --status-bg: rgba(16, 185, 129, 0.12);
-  --status-border: rgba(16, 185, 129, 0.28);
-  --status-text: #34d399;
+  /* ─── Dark Theme (Linear-inspired surface ladder) ─── */
+  --bg-main:              #09090b;
+  --bg-surface:           #18181b;
+  --bg-surface-elevated:  #1f1f23;
+  --bg-card:              #18181b;
+  --bg-card-hover:        #1f1f23;
+  --border:               #27272a;
+  --border-focus:         #3f3f46;
+  --text-main:            #fafafa;
+  --text-muted:           #d4d4d8;
+  --text-subtle:          #a1a1aa;
+  --text-faint:           #71717a;
+  --accent:               #6366f1;
+  --accent-hover:         #818cf8;
+  --accent-light:         rgba(99, 102, 241, 0.12);
+  --accent-secondary:     #818cf8;
+  --accent-secondary-light: rgba(129, 140, 248, 0.1);
+  --tag-bg:               #27272a;
+  --tag-text:             #d4d4d8;
+  --shadow-sm:            0 1px 2px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03);
+  --shadow-md:            0 2px 4px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.04);
+  --shadow-lg:            0 4px 12px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+  --shadow-glow:          0 0 24px rgba(99, 102, 241, 0.15);
+  --nav-bg:               rgba(9, 9, 11, 0.82);
+  --status-bg:            rgba(34, 197, 94, 0.1);
+  --status-border:        rgba(34, 197, 94, 0.25);
+  --status-text:          #4ade80;
 
   /* Terminal Colors (Dark) */
-  --terminal-bg: rgba(10, 15, 26, 0.95);
-  --terminal-header: #141f36;
-  --terminal-border: #1e293b;
-  --terminal-text: #38bdf8;
+  --terminal-bg:          rgba(9, 9, 11, 0.95);
+  --terminal-header:      #18181b;
+  --terminal-border:      #27272a;
+  --terminal-text:        #818cf8;
 
   /* Cursor Tokens */
-  --cursor-dot-color: #38bdf8;
-  --cursor-ring-color: rgba(56, 189, 248, 0.5);
-  --cursor-ring-active: rgba(56, 189, 248, 0.25);
-  --cursor-glow: rgba(56, 189, 248, 0.8);
+  --cursor-dot-color:     #818cf8;
+  --cursor-ring-color:    rgba(129, 140, 248, 0.45);
+  --cursor-ring-active:   rgba(129, 140, 248, 0.2);
+  --cursor-glow:          rgba(129, 140, 248, 0.7);
 }
-

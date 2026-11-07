@@ -20,13 +20,13 @@ export const Hero: React.FC = () => {
         </div>
 
         <h1 className="hero-title">
-          Hola, soy <span className="text-gradient">{PERSONAL_INFO.shortName}</span> 👋
+          Hola, soy <span className="text-gradient">{PERSONAL_INFO.shortName}</span>
         </h1>
 
         <div className="hero-role">
           <span>{PERSONAL_INFO.role}</span>
-          <span style={{ color: 'var(--text-subtle)' }}>•</span>
-          <span className="code-font" style={{ color: 'var(--accent)' }}>{PERSONAL_INFO.specialization}</span>
+          <span className="hero-role-dot">•</span>
+          <span className="code-font hero-role-spec">{PERSONAL_INFO.specialization}</span>
         </div>
 
         <p className="hero-bio">{PERSONAL_INFO.about}</p>
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
           <a
             href={PERSONAL_INFO.cvUrl}
             download="CV_Diego_Herrera.pdf"
-            className="btn-secondary"
+            className="btn-secondary download-cv"
             title="Descargar Curriculum Vitae en PDF"
           >
             <FileDown size={18} />
@@ -51,8 +51,7 @@ export const Hero: React.FC = () => {
             href={PERSONAL_INFO.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary"
-            style={{ borderColor: 'rgba(37, 211, 102, 0.4)', color: '#22c55e' }}
+            className="btn-secondary btn-whatsapp"
             title="Escribir por WhatsApp"
           >
             <MessageSquare size={18} />
@@ -66,7 +65,7 @@ export const Hero: React.FC = () => {
             <div key={i} className="hero-metric-card">
               <div className="metric-header">
                 <span className="metric-label">{h.label}</span>
-                <Sparkles size={13} color="var(--accent)" />
+                <Sparkles size={13} className="metric-icon" />
               </div>
               <div className="metric-value">{h.value}</div>
               <div className="metric-sub">{h.sub}</div>
@@ -76,7 +75,7 @@ export const Hero: React.FC = () => {
 
         <div className="hero-meta">
           <div className="hero-meta-item">
-            <MapPin size={17} color="var(--accent)" />
+            <MapPin size={17} className="meta-accent-icon" />
             <span>{PERSONAL_INFO.location} {PERSONAL_INFO.flag}</span>
           </div>
 
@@ -85,7 +84,6 @@ export const Hero: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="hero-meta-item"
-            style={{ color: 'inherit' }}
           >
             <GithubIcon size={17} />
             <span className="code-font">{PERSONAL_INFO.githubUsername}</span>
@@ -95,19 +93,17 @@ export const Hero: React.FC = () => {
             href={PERSONAL_INFO.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-meta-item"
-            style={{ color: 'inherit' }}
+            className="hero-meta-item hero-meta-linkedin"
           >
-            <LinkedinIcon size={17} style={{ color: '#0a66c2' }} />
+            <LinkedinIcon size={17} />
             <span>LinkedIn</span>
           </a>
 
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
             className="hero-meta-item"
-            style={{ color: 'inherit' }}
           >
-            <Mail size={17} color="var(--accent)" />
+            <Mail size={17} className="meta-accent-icon" />
             <span>{PERSONAL_INFO.email}</span>
           </a>
         </div>

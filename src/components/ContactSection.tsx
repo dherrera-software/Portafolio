@@ -27,28 +27,24 @@ export const ContactSection: React.FC = () => {
         </div>
 
         <div className="contact-grid">
-          {/* Email Card with Copy option */}
-          <div className="contact-card" style={{ cursor: 'pointer' }} onClick={handleCopyEmail}>
+          {/* Email Card with Copy option - Accessible Semantic Button */}
+          <button
+            type="button"
+            className="contact-card contact-card-btn"
+            onClick={handleCopyEmail}
+            aria-label="Copiar correo electrónico al portapapeles"
+          >
             <div className="contact-icon-circle">
-              <Mail size={22} />
+              <Mail size={20} />
             </div>
-            <div style={{ flex: 1 }}>
+            <div className="contact-info-text">
               <p className="contact-info-title">Correo Electrónico</p>
               <p className="contact-info-value">{PERSONAL_INFO.email}</p>
             </div>
-            <button
-              type="button"
-              className="theme-toggle-btn"
-              style={{ padding: '0.45rem' }}
-              title="Copiar correo"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleCopyEmail();
-              }}
-            >
-              {copied ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
-            </button>
-          </div>
+            <div className="contact-copy-indicator" title="Copiar correo">
+              {copied ? <Check size={16} color="#22c55e" /> : <Copy size={16} />}
+            </div>
+          </button>
 
           {/* WhatsApp / Phone Card */}
           <a
@@ -57,8 +53,8 @@ export const ContactSection: React.FC = () => {
             rel="noopener noreferrer"
             className="contact-card"
           >
-            <div className="contact-icon-circle" style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#22c55e' }}>
-              <MessageSquare size={22} />
+            <div className="contact-icon-circle contact-icon-whatsapp">
+              <MessageSquare size={20} />
             </div>
             <div>
               <p className="contact-info-title">WhatsApp / Teléfono</p>
@@ -73,8 +69,8 @@ export const ContactSection: React.FC = () => {
             rel="noopener noreferrer"
             className="contact-card"
           >
-            <div className="contact-icon-circle" style={{ background: 'rgba(10, 102, 194, 0.15)', color: '#0a66c2' }}>
-              <LinkedinIcon size={22} />
+            <div className="contact-icon-circle contact-icon-linkedin">
+              <LinkedinIcon size={20} />
             </div>
             <div>
               <p className="contact-info-title">LinkedIn</p>
@@ -90,7 +86,7 @@ export const ContactSection: React.FC = () => {
             className="contact-card"
           >
             <div className="contact-icon-circle">
-              <GithubIcon size={22} />
+              <GithubIcon size={20} />
             </div>
             <div>
               <p className="contact-info-title">GitHub</p>
@@ -101,7 +97,7 @@ export const ContactSection: React.FC = () => {
           {/* Location Card */}
           <div className="contact-card">
             <div className="contact-icon-circle">
-              <MapPin size={22} />
+              <MapPin size={20} />
             </div>
             <div>
               <p className="contact-info-title">Ubicación</p>
@@ -112,13 +108,13 @@ export const ContactSection: React.FC = () => {
 
         {/* Action Banner */}
         <div className="contact-banner">
-          <h3 style={{ fontSize: '1.6rem', color: 'var(--text-main)' }}>
+          <h3 className="contact-banner-title">
             ¿Listo para construir algo extraordinario juntos?
           </h3>
-          <p style={{ maxWidth: 580, color: 'var(--text-muted)', fontSize: '1rem' }}>
+          <p className="contact-banner-desc">
             Puedes contactarme directamente vía correo electrónico o WhatsApp, o descargar mi currículum en formato PDF para revisarlo con tu equipo.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div className="contact-banner-actions">
             <a href={`mailto:${PERSONAL_INFO.email}`} className="btn-primary">
               <Send size={18} />
               <span>Enviar Correo Directo</span>

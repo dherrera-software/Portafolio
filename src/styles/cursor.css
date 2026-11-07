@@ -1,8 +1,4 @@
-/* Ocultar el cursor por defecto */
-body {
-  cursor: none;
-}
-
+/* Ocultar cursor nativo solo cuando se añade la clase o se detecta mouse */
 .custom-cursor-wrapper {
   position: fixed;
   top: 0;
@@ -26,10 +22,9 @@ body {
   left: -4px;
   width: 8px;
   height: 8px;
-  background-color: #38bdf8;
-  /* Cian */
+  background-color: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 10px #38bdf8;
+  box-shadow: 0 0 10px var(--accent);
 }
 
 /* El anillo exterior con MEZCLA DE COLORES */
@@ -37,37 +32,31 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* EFECTO MÁGICO: Invierte los colores debajo de él */
-  mix-blend-mode: difference;
   backdrop-filter: blur(2px);
-  /* Opcional: cristal */
 }
 
-/* El anillo cuando pasa por un botón */
+/* El anillo cuando pasa por un botón o link */
 .cursor-ring.hover-state {
   backdrop-filter: none;
-  background-color: #a855f7;
-  /* Púrpura sólido */
-  mix-blend-mode: normal;
-  /* Desactivamos la inversión para que el texto se lea bien */
-  border: none;
+  background-color: var(--accent-light);
+  border-color: var(--accent);
 }
 
 /* El texto dentro del cursor (Ej: "Ver", "Descargar") */
 .cursor-text {
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 700;
+  color: var(--text-main);
+  font-size: 11px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-family: inherit;
+  font-family: var(--font-sans);
 }
 
 /* Onda expansiva al hacer clic */
@@ -75,10 +64,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 2px solid #a855f7;
-  /* Púrpura */
+  border: 2px solid var(--accent);
   pointer-events: none;
 }

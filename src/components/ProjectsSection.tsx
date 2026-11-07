@@ -54,7 +54,7 @@ export const ProjectsSection: React.FC = () => {
                     <p className="project-subtitle">{project.subtitle}</p>
                   </div>
                   <div className="project-direct-indicator" title="Abrir proyecto">
-                    <ExternalLink size={18} />
+                    <ExternalLink size={16} />
                   </div>
                 </div>
 
@@ -111,7 +111,7 @@ export const ProjectsSection: React.FC = () => {
         {/* Secondary / Specialized Projects */}
         {otherProjects.length > 0 && (
           <div style={{ marginTop: '3.5rem' }}>
-            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>
+            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.5rem', color: 'var(--text-main)', fontWeight: 600 }}>
               Otros Proyectos & Sistemas Empresariales
             </h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
@@ -121,31 +121,19 @@ export const ProjectsSection: React.FC = () => {
             <div className="secondary-projects-grid">
               {otherProjects.map((project: Project) => (
                 <div key={project.id} className="secondary-project-card">
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                    <h4 style={{ fontSize: '1.2rem', color: 'var(--text-main)' }}>{project.title}</h4>
-                    <span
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.35rem',
-                        fontSize: '0.75rem',
-                        padding: '0.2rem 0.6rem',
-                        borderRadius: 9999,
-                        background: 'var(--bg-surface-elevated)',
-                        color: 'var(--text-muted)',
-                        border: '1px solid var(--border)',
-                      }}
-                    >
+                  <div className="secondary-card-header">
+                    <h4 className="secondary-card-title">{project.title}</h4>
+                    <span className="secondary-card-badge">
                       <Lock size={12} />
                       <span>Privado / Institucional</span>
                     </span>
                   </div>
 
-                  <p style={{ color: 'var(--accent)', fontSize: '0.875rem', marginBottom: '0.75rem', fontWeight: 500 }}>
+                  <p className="secondary-card-subtitle">
                     {project.subtitle}
                   </p>
 
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+                  <p className="secondary-card-desc">
                     {project.description}
                   </p>
 
