@@ -24,11 +24,20 @@ export const FuturisticCursor: React.FC = () => {
   const ringYSpring = useSpring(cursorY, { damping: 30, stiffness: 200, mass: 1 });
 
   useEffect(() => {
-    // Si es un dispositivo táctil, no activar cursor customizado y mantener puntero nativo
-    if (window.matchMedia('(pointer: coarse)').matches) {
+    // Si es un dispositivo táctil (móvil, tablet), no activar cursor customizado y mantener puntero nativo
+    const mediaTouch = window.matchMedia('(pointer: coarse), (hover: none)');
+    if (mediaTouch.matches) {
       setIsTouchDevice(true);
       return;
     }
+
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      setIsTouchDevice(e.matches);
+      if (e.matches) {
+        document.body.style.cursor = 'auto';
+      }
+    };
+    mediaTouch.addEventListener('change', handleMediaChange);
 
     // Solo ocultar el cursor nativo si NO es touch y el componente montó
     document.body.style.cursor = 'none';
@@ -73,6 +82,7 @@ export const FuturisticCursor: React.FC = () => {
 
     return () => {
       document.body.style.cursor = 'auto';
+      mediaTouch.removeEventListener('change', handleMediaChange);
       window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleMouseOver);
       window.removeEventListener('mousedown', handleMouseDown);

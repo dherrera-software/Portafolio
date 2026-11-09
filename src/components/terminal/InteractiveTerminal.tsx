@@ -14,19 +14,33 @@ interface OutputEntry {
   response: React.ReactNode;
 }
 
+/** Shorter prompt for small screens */
+const useShortPrompt = () => {
+  const [isSmall, setIsSmall] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 480px)');
+    setIsSmall(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsSmall(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return isSmall ? 'diego:~$' : 'diego@portafolio:~$';
+};
+
 export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, toggleTheme }) => {
   const [inputVal, setInputVal] = useState('');
+  const prompt = useShortPrompt();
   const [history, setHistory] = useState<OutputEntry[]>([
     {
       id: 'init-1',
       command: 'welcome',
       response: (
         <div>
-          <p style={{ color: '#38bdf8', fontWeight: 600 }}>
-            Diego Herrera Terminal v1.0.0 [x86_64-pc-fullstack]
+          <p style={{ color: '#38bdf8', fontWeight: 600, wordBreak: 'break-word' as const }}>
+            Diego Herrera Terminal v1.0.0
           </p>
           <p style={{ color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-            Escribe <span style={{ color: '#f59e0b', fontWeight: 600 }}>help</span> para ver todos los comandos disponibles o presiona los botones rápidos.
+            Escribe <span style={{ color: '#f59e0b', fontWeight: 600 }}>help</span> para ver los comandos disponibles o presiona los botones rápidos.
           </p>
         </div>
       ),
@@ -60,7 +74,7 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
     switch (cmd) {
       case 'help':
         output = (
-          <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '0.4rem', marginTop: '0.3rem' }}>
+          <div className="terminal-help-grid">
             <span style={{ color: '#38bdf8' }}>projects</span> <span>Lista los proyectos con enlaces directos</span>
             <span style={{ color: '#38bdf8' }}>fileflow</span> <span>Abre FileFlow (conversor web) en nueva pestaña</span>
             <span style={{ color: '#38bdf8' }}>pong</span> <span>Abre Pong Retro Arcade en nueva pestaña</span>
@@ -287,8 +301,8 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
         <div className="terminal-body">
           {history.map((entry) => (
             <div key={entry.id} className="terminal-line">
-              <div>
-                <span className="terminal-prompt-user">diego@portafolio:~$</span>
+              <div className="terminal-prompt-line">
+                <span className="terminal-prompt-user">{prompt}</span>
                 <span className="terminal-command-echo">{entry.command}</span>
               </div>
               <div className="terminal-output-text">{entry.response}</div>
@@ -314,7 +328,7 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
 
         {/* Input Bar */}
         <div className="terminal-input-row">
-          <span className="terminal-prompt-user">diego@portafolio:~$</span>
+          <span className="terminal-prompt-user">{prompt}</span>
           <input
             ref={inputRef}
             type="text"
@@ -322,7 +336,7 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Escribe un comando (ej: help, projects, fileflow)..."
+            placeholder="Escribe un comando..."
             autoFocus
           />
           <CornerDownLeft size={16} color="var(--text-subtle)" />

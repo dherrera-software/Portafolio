@@ -70,3 +70,10 @@
   border: 2px solid var(--accent);
   pointer-events: none;
 }
+
+/* En dispositivos táctiles (móviles y tablets), ocultar el cursor personalizado */
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor-wrapper {
+    display: none !important;
+  }
+}
