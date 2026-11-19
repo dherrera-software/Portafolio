@@ -8,7 +8,9 @@ export const FuturisticCursor: React.FC = () => {
   const [isClicking, setIsClicking] = useState(false);
   const [hoverText, setHoverText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(pointer: coarse), (hover: none)').matches,
+  );
 
   // Valores del mouse para Framer Motion
   const cursorX = useMotionValue(-100);
@@ -27,7 +29,6 @@ export const FuturisticCursor: React.FC = () => {
     // Si es un dispositivo táctil (móvil, tablet), no activar cursor customizado y mantener puntero nativo
     const mediaTouch = window.matchMedia('(pointer: coarse), (hover: none)');
     if (mediaTouch.matches) {
-      setIsTouchDevice(true);
       return;
     }
 

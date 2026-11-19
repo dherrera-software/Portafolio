@@ -8,7 +8,8 @@
 
 | Proyecto | Descripción | Demo en Vivo | Repositorio |
 |---|---|:---:|:---:|
-| **FileFlow** | Conversor universal de archivos sobre Cloudflare Workers & Hono | [▶️ Probar FileFlow](https://dherrera-software.github.io/FileFlow/) | [GitHub](https://github.com/dherrera-software/FileFlow) |
+| **FileFlow** | Conversor web sobre Cloudflare Workers & Hono, con opción de escritorio | [▶️ Probar FileFlow](https://dherrera-software.github.io/FileFlow/) | [GitHub](https://github.com/dherrera-software/FileFlow) |
+| **FileFlow Desktop** | Conversor local offline con Tauri 2 y motor Rust (50 formatos / 476 rutas) | [⬇️ Descargar instalador](https://dherrera-software.github.io/FileFlow/downloads/FileFlow-Setup.exe) | [GitHub](https://github.com/dherrera-software/FileFlow-Desktop) |
 | **Pong – Retro Arcade** | Videojuego clásico con estética CRT, Phaser 4 e IA con 4 dificultades | [🕹️ Jugar Pong](https://dherrera-software.github.io/Pong/) | [GitHub](https://github.com/dherrera-software/Pong) |
 
 ---
@@ -19,11 +20,11 @@
   Puntero de alta precisión con núcleo luminoso y anillo HUD seguidor mediante física *lerp* en `requestAnimationFrame`. Reacciona cinemáticamente con mirillas tácticas y expansión al pasar sobre tarjetas y botones, desactivándose automáticamente en pantallas táctiles (`pointer: coarse`).
 * **💻 Terminal Interactiva de Comandos (`InteractiveTerminal`):**
   Consola accesible mediante el atajo global **`Ctrl + K`** (o botón flotante) que permite ejecutar comandos en tiempo real:
-  `help`, `projects`, `fileflow`, `pong`, `skills`, `experience`, `contact`, `cv`, `theme`, `clear`, `exit`.
+  `help`, `projects`, `fileflow`, `desktop` (descarga el instalador de FileFlow Desktop), `pong`, `skills`, `experience`, `contact`, `cv`, `theme`, `clear`, `exit`.
 * **🌓 Modo Oscuro / Claro con Persistencia:**
   Toggle visual en el header con icono Sol/Luna y sincronización en `localStorage`.
 * **🔗 Tarjetas de Proyectos con Enlace Directo:**
-  Las tarjetas de *FileFlow* y *Pong* redirigen directamente a las aplicaciones desplegadas en vivo con `target="_blank"`, incluyendo capturas de alta resolución y botón de código fuente.
+  Las tarjetas de *FileFlow* y *Pong* redirigen a las aplicaciones desplegadas en vivo, mientras que *FileFlow Desktop* descarga su instalador Windows (13 conversiones en la web vs. 50 formatos / 476 rutas en el motor Rust). Todas incluyen captura, botón de código fuente y apertura en pestaña nueva.
 * **📈 Indicador de Scroll y Spy de Navegación:**
   Barra superior de progreso de lectura y seguimiento dinámico de secciones mediante `IntersectionObserver`.
 * **📄 Descarga Directa de Currículum:**
@@ -44,12 +45,14 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-DEA584?style=flat&logo=rust&logoColor=white)
 
 **Frontend**
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React_19-20232A?style=flat&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![Tauri 2](https://img.shields.io/badge/Tauri_2-24C8DB?style=flat&logo=tauri&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 ![PrimeReact](https://img.shields.io/badge/PrimeReact-6366F1?style=flat&logo=primereact&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)

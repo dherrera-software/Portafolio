@@ -1,7 +1,7 @@
 import React from 'react';
 import { PROJECTS } from '../data/portfolioData';
 import type { Project } from '../types/portfolio';
-import { ExternalLink, Sparkles, CheckCircle2, Lock } from 'lucide-react';
+import { Download, ExternalLink, Sparkles, CheckCircle2, Lock } from 'lucide-react';
 import { GithubIcon } from './icons/BrandIcons';
 
 export const ProjectsSection: React.FC = () => {
@@ -18,20 +18,24 @@ export const ProjectsSection: React.FC = () => {
           </div>
           <h2 className="section-title">Proyectos Destacados</h2>
           <p className="section-desc">
-            Haz clic directamente en cualquier tarjeta para abrir la aplicación o juego desplegado en vivo en una nueva pestaña.
+            Haz clic en una tarjeta para abrir la aplicación en vivo o descargar el instalador de FileFlow Desktop en una nueva pestaña.
           </p>
         </div>
 
         {/* Featured Projects with Live Demo & Direct Card Link */}
         <div className="projects-grid">
-          {featuredProjects.map((project: Project) => (
+          {featuredProjects.map((project: Project) => {
+            const primaryUrl = project.liveUrl ?? project.downloadUrl;
+            const isDownload = !project.liveUrl && Boolean(project.downloadUrl);
+
+            return (
             <a
               key={project.id}
-              href={project.liveUrl}
+              href={primaryUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="project-card-link"
-              title={`Abrir ${project.title} (${project.liveUrl})`}
+              title={`${isDownload ? 'Descargar' : 'Abrir'} ${project.title} (${primaryUrl})`}
             >
               {project.image && (
                 <div className="project-image-box">
@@ -41,8 +45,8 @@ export const ProjectsSection: React.FC = () => {
                     loading="lazy"
                   />
                   <div className="project-badge-overlay">
-                    <ExternalLink size={13} />
-                    <span>Demo en vivo</span>
+                    {isDownload ? <Download size={13} /> : <ExternalLink size={13} />}
+                    <span>{isDownload ? 'Descargar instalador' : 'Demo en vivo'}</span>
                   </div>
                 </div>
               )}
@@ -53,8 +57,8 @@ export const ProjectsSection: React.FC = () => {
                     <h3 className="project-title">{project.title}</h3>
                     <p className="project-subtitle">{project.subtitle}</p>
                   </div>
-                  <div className="project-direct-indicator" title="Abrir proyecto">
-                    <ExternalLink size={16} />
+                  <div className="project-direct-indicator" title={isDownload ? 'Descargar instalador' : 'Abrir proyecto'}>
+                    {isDownload ? <Download size={16} /> : <ExternalLink size={16} />}
                   </div>
                 </div>
 
@@ -82,9 +86,9 @@ export const ProjectsSection: React.FC = () => {
                 <div className="project-footer-actions">
                   <span className="project-live-cue">
                     <span>
-                      {project.id === 'pong' ? '🕹️ Jugar en vivo' : '⚡ Abrir aplicación'}
+                      {project.ctaLabel ?? (project.id === 'pong' ? '🕹️ Jugar en vivo' : '⚡ Abrir aplicación')}
                     </span>
-                    <ExternalLink size={15} />
+                    {isDownload ? <Download size={15} /> : <ExternalLink size={15} />}
                   </span>
 
                   {project.githubUrl && (
@@ -105,7 +109,8 @@ export const ProjectsSection: React.FC = () => {
                 </div>
               </div>
             </a>
-          ))}
+            );
+          })}
         </div>
 
         {/* Secondary / Specialized Projects */}

@@ -7,6 +7,8 @@ export interface Project {
   tags: string[];
   liveUrl?: string;
   githubUrl?: string;
+  downloadUrl?: string;
+  ctaLabel?: string;
   isPrivate?: boolean;
   featured: boolean;
   highlights: string[];

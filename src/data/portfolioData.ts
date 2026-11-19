@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     title: "FileFlow",
     subtitle: "Plataforma Web de Conversión Universal de Archivos",
     description:
-      "Conversor de archivos de alta fidelidad construido en arquitectura monorepo desacoplada. Procesamiento veloz pensado para ejecutarse 100% sobre Cloudflare Workers con Hono en el backend y React 19 en el frontend. Soporta conversión de más de 35 formatos (documentos, imágenes, audio y datos estructurados: TXT, PDF, HTML, MD, JPG, PNG, CSV, TSV, JSON, XML) con validación MIME, políticas CORS y despliegue CI/CD automatizado.",
+      "Conversor de archivos de alta fidelidad construido en arquitectura monorepo desacoplada. La versión web ejecuta 13 conversiones compatibles con Cloudflare Workers (Hono + React 19) con validación MIME, políticas CORS y despliegue CI/CD automatizado; cuando se necesitan formatos avanzados, ofrece un instalador de escritorio con motor nativo.",
     image: `${cleanBase}images/fileflow.png`,
     tags: [
       "React 19",
@@ -46,9 +46,27 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/dherrera-software/FileFlow",
     featured: true,
     highlights: [
-      "Arquitectura monorepo (pnpm workspaces) con procesamiento seguro de archivos.",
-      "Procesamiento serverless en Cloudflare Workers sin dependencias pesadas innecesarias.",
-      "Pipeline CI/CD automatizado en GitHub Actions hacia GitHub Pages."
+      "Arquitectura monorepo (pnpm workspaces) con 13 conversiones compatibles con el Worker.",
+      "Procesamiento serverless en Cloudflare Workers (Hono) sin servidores persistentes.",
+      "CI/CD en GitHub Actions hacia GitHub Pages, con opción Desktop para formatos avanzados."
+    ]
+  },
+  {
+    id: "fileflow-desktop",
+    title: "FileFlow Desktop",
+    subtitle: "Conversor Nativo Offline con Motor Rust",
+    description:
+      "Versión de escritorio de FileFlow construida con Tauri 2 y un motor en Rust para conversiones avanzadas sin depender del backend Cloudflare: 50 formatos y 476 rutas disponibles sin conexión. Incluye instalador para Windows y código abierto en GitHub.",
+    image: `${cleanBase}images/fileflow-desktop.png`,
+    tags: ["Tauri 2", "Rust", "React 19", "TypeScript", "Vite", "GitHub Actions"],
+    downloadUrl: "https://dherrera-software.github.io/FileFlow/downloads/FileFlow-Setup.exe",
+    githubUrl: "https://github.com/dherrera-software/FileFlow-Desktop",
+    ctaLabel: "Descargar instalador",
+    featured: true,
+    highlights: [
+      "Motor nativo en Rust con 50 formatos y 476 rutas de conversión sin conexión.",
+      "Instalador Windows de 3,5 MB servido desde la web de FileFlow.",
+      "Desarrollo abierto en GitHub con releases publicadas para cada versión."
     ]
   },
   {
@@ -111,6 +129,7 @@ export const TECH_CATEGORIES: TechCategory[] = [
       { name: "Python", badgeUrl: "https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" },
       { name: "PHP", badgeUrl: "https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white" },
       { name: "SQL", badgeUrl: "https://img.shields.io/badge/SQL-4479A1?style=flat&logoColor=white" },
+      { name: "Rust", badgeUrl: "https://img.shields.io/badge/Rust-DEA584?style=flat&logo=rust&logoColor=white" },
     ]
   },
   {
@@ -119,6 +138,7 @@ export const TECH_CATEGORIES: TechCategory[] = [
       { name: "Next.js", badgeUrl: "https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white" },
       { name: "React 19", badgeUrl: "https://img.shields.io/badge/React_19-20232A?style=flat&logo=react&logoColor=61DAFB" },
       { name: "Vite", badgeUrl: "https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" },
+      { name: "Tauri 2", badgeUrl: "https://img.shields.io/badge/Tauri_2-24C8DB?style=flat&logo=tauri&logoColor=white" },
       { name: "Tailwind CSS", badgeUrl: "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white" },
       { name: "PrimeReact", badgeUrl: "https://img.shields.io/badge/PrimeReact-6366F1?style=flat&logo=primereact&logoColor=white" },
       { name: "HTML5", badgeUrl: "https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" },

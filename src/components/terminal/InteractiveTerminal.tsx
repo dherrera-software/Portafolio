@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Terminal, CornerDownLeft, ExternalLink, Download } from 'lucide-react';
 import { PERSONAL_INFO, PROJECTS, TECH_CATEGORIES } from '../../data/portfolioData';
 
+const DESKTOP_PROJECT = PROJECTS.find((p) => p.id === 'fileflow-desktop');
+
 interface TerminalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -16,10 +18,11 @@ interface OutputEntry {
 
 /** Shorter prompt for small screens */
 const useShortPrompt = () => {
-  const [isSmall, setIsSmall] = useState(false);
+  const [isSmall, setIsSmall] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 480px)').matches,
+  );
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 480px)');
-    setIsSmall(mq.matches);
     const handler = (e: MediaQueryListEvent) => setIsSmall(e.matches);
     mq.addEventListener('change', handler);
     return () => mq.removeEventListener('change', handler);
@@ -77,6 +80,7 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
           <div className="terminal-help-grid">
             <span style={{ color: '#38bdf8' }}>projects</span> <span>Lista los proyectos con enlaces directos</span>
             <span style={{ color: '#38bdf8' }}>fileflow</span> <span>Abre FileFlow (conversor web) en nueva pestaña</span>
+            <span style={{ color: '#38bdf8' }}>desktop</span> <span>Descarga el instalador de FileFlow Desktop (Windows)</span>
             <span style={{ color: '#38bdf8' }}>pong</span> <span>Abre Pong Retro Arcade en nueva pestaña</span>
             <span style={{ color: '#38bdf8' }}>skills</span> <span>Muestra el stack tecnológico categorizado</span>
             <span style={{ color: '#38bdf8' }}>experience</span> <span>Muestra la experiencia laboral</span>
@@ -111,6 +115,17 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
                       <ExternalLink size={12} />
                     </a>
                   )}
+                  {p.downloadUrl && (
+                    <a
+                      href={p.downloadUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="terminal-project-chip"
+                    >
+                      <Download size={12} />
+                      <span>{p.ctaLabel ?? 'Descargar instalador'}</span>
+                    </a>
+                  )}
                   {p.githubUrl && (
                     <a
                       href={p.githubUrl}
@@ -132,6 +147,34 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
       case 'fileflow':
         window.open('https://dherrera-software.github.io/FileFlow/', '_blank');
         output = <p style={{ color: '#34d399' }}>Redirigiendo a FileFlow en nueva pestaña...</p>;
+        break;
+
+      case 'desktop':
+      case 'fileflow-desktop':
+        if (DESKTOP_PROJECT?.downloadUrl) {
+          const link = document.createElement('a');
+          link.href = DESKTOP_PROJECT.downloadUrl;
+          link.download = 'FileFlow-Setup.exe';
+          link.click();
+          output = (
+            <div>
+              <p style={{ color: '#34d399', marginBottom: '0.4rem' }}>
+                Descargando FileFlow Desktop (Windows, 3,5 MB)...
+              </p>
+              <a
+                href={DESKTOP_PROJECT.downloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="terminal-project-chip"
+              >
+                <Download size={12} />
+                <span>Clic aquí si no inició la descarga</span>
+              </a>
+            </div>
+          );
+        } else {
+          output = <p style={{ color: '#ef4444' }}>No se encontró el instalador de FileFlow Desktop.</p>;
+        }
         break;
 
       case 'pong':
@@ -276,7 +319,7 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
 
   if (!isOpen) return null;
 
-  const quickCommands = ['help', 'projects', 'fileflow', 'pong', 'skills', 'contact', 'cv', 'theme', 'clear'];
+  const quickCommands = ['help', 'projects', 'fileflow', 'desktop', 'pong', 'skills', 'contact', 'cv', 'theme', 'clear'];
 
   return (
     <div className="terminal-backdrop" onClick={onClose}>
