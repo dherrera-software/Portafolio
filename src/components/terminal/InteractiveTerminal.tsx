@@ -221,7 +221,6 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
         output = (
           <div>
             <p>📧 Email: <a href={`mailto:${PERSONAL_INFO.email}`} style={{ color: '#38bdf8' }}>{PERSONAL_INFO.email}</a></p>
-            <p>📱 WhatsApp: <a href={PERSONAL_INFO.whatsappUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#22c55e' }}>{PERSONAL_INFO.phoneFormatted}</a></p>
             <p>💼 LinkedIn: <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8' }}>diego-herrera</a></p>
             <p>🐙 GitHub: <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8' }}>github.com/{PERSONAL_INFO.githubUsername}</a></p>
           </div>

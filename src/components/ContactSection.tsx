@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { Mail, MessageSquare, MapPin, Copy, Check, FileDown, Send } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, FileDown, Send } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons/BrandIcons';
 
 export const ContactSection: React.FC = () => {
@@ -22,7 +22,7 @@ export const ContactSection: React.FC = () => {
           </div>
           <h2 className="section-title">Hablemos</h2>
           <p className="section-desc">
-            ¿Tienes un proyecto en mente, una vacante o simplemente deseas conversar sobre tecnología? Estoy disponible para nuevas oportunidades.
+            ¿Tienes una vacante, un proyecto o quieres conversar sobre tecnología? Escríbeme.
           </p>
         </div>
 
@@ -45,22 +45,6 @@ export const ContactSection: React.FC = () => {
               {copied ? <Check size={16} color="#22c55e" /> : <Copy size={16} />}
             </div>
           </button>
-
-          {/* WhatsApp / Phone Card */}
-          <a
-            href={PERSONAL_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-card"
-          >
-            <div className="contact-icon-circle contact-icon-whatsapp">
-              <MessageSquare size={20} />
-            </div>
-            <div>
-              <p className="contact-info-title">WhatsApp / Teléfono</p>
-              <p className="contact-info-value">{PERSONAL_INFO.phoneFormatted}</p>
-            </div>
-          </a>
 
           {/* LinkedIn Card */}
           <a
@@ -101,7 +85,7 @@ export const ContactSection: React.FC = () => {
             </div>
             <div>
               <p className="contact-info-title">Ubicación</p>
-              <p className="contact-info-value">{PERSONAL_INFO.location} {PERSONAL_INFO.flag}</p>
+              <p className="contact-info-value">{PERSONAL_INFO.location}</p>
             </div>
           </div>
         </div>
@@ -109,10 +93,10 @@ export const ContactSection: React.FC = () => {
         {/* Action Banner */}
         <div className="contact-banner">
           <h3 className="contact-banner-title">
-            ¿Listo para construir algo extraordinario juntos?
+            ¿Buscas un practicante o desarrollador junior? Hablemos.
           </h3>
           <p className="contact-banner-desc">
-            Puedes contactarme directamente vía correo electrónico o WhatsApp, o descargar mi currículum en formato PDF para revisarlo con tu equipo.
+            Estoy disponible para prácticas profesionales y puestos junior. Escríbeme por correo o LinkedIn.
           </p>
           <div className="contact-banner-actions">
             <a href={`mailto:${PERSONAL_INFO.email}`} className="btn-primary">
@@ -125,7 +109,7 @@ export const ContactSection: React.FC = () => {
               className="btn-secondary"
             >
               <FileDown size={18} />
-              <span>Descargar Curriculum Vitae</span>
+              <span>Descargar CV</span>
             </a>
           </div>
         </div>

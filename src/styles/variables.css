@@ -63,11 +63,9 @@
   --terminal-border:      #d4d4d8;
   --terminal-text:        #09090b;
 
-  /* Cursor Tokens */
-  --cursor-dot-color:     #6366f1;
-  --cursor-ring-color:    rgba(99, 102, 241, 0.4);
-  --cursor-ring-active:   rgba(99, 102, 241, 0.2);
-  --cursor-glow:          rgba(99, 102, 241, 0.6);
+  /* Cursor Tokens (RGB triplets for alpha compositing) */
+  --fc-accent:            79 70 229;   /* #4f46e5 */
+  --fc-accent-2:          99 102 241;  /* #6366f1 */
 }
 
 html.dark {
@@ -105,9 +103,7 @@ html.dark {
   --terminal-border:      #27272a;
   --terminal-text:        #818cf8;
 
-  /* Cursor Tokens */
-  --cursor-dot-color:     #818cf8;
-  --cursor-ring-color:    rgba(129, 140, 248, 0.45);
-  --cursor-ring-active:   rgba(129, 140, 248, 0.2);
-  --cursor-glow:          rgba(129, 140, 248, 0.7);
+  /* Cursor Tokens (RGB triplets for alpha compositing) */
+  --fc-accent:            99 102 241;  /* #6366f1 */
+  --fc-accent-2:          129 140 248; /* #818cf8 */
 }

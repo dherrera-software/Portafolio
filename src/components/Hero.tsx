@@ -1,13 +1,13 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { ArrowUpRight, FileDown, Mail, MapPin, MessageSquare, Sparkles } from 'lucide-react';
+import { ArrowUpRight, FileDown, Mail, MapPin, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons/BrandIcons';
 
 export const Hero: React.FC = () => {
   const highlights = [
     { label: 'Enfoque Principal', value: 'Next.js & TypeScript', sub: 'Arquitectura escalable' },
     { label: 'Conversión FileFlow', value: '50 formatos', sub: 'Web + Desktop · Tauri + Rust' },
-    { label: 'Precisión Figma', value: '100% Fidelidad', sub: 'PrimeReact & Tailwind' },
+    { label: 'Precisión Figma', value: 'Fiel al diseño', sub: 'Interfaces implementadas desde prototipos de Figma' },
     { label: 'Videojuegos Web', value: 'Phaser 4 Engine', sub: 'IA propia & estética CRT' },
   ];
 
@@ -46,17 +46,6 @@ export const Hero: React.FC = () => {
             <FileDown size={18} />
             <span>Descargar CV</span>
           </a>
-
-          <a
-            href={PERSONAL_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary btn-whatsapp"
-            title="Escribir por WhatsApp"
-          >
-            <MessageSquare size={18} />
-            <span>WhatsApp</span>
-          </a>
         </div>
 
         {/* Senior Engineering KPI Cards */}
@@ -76,7 +65,7 @@ export const Hero: React.FC = () => {
         <div className="hero-meta">
           <div className="hero-meta-item">
             <MapPin size={17} className="meta-accent-icon" />
-            <span>{PERSONAL_INFO.location} {PERSONAL_INFO.flag}</span>
+            <span>{PERSONAL_INFO.location}</span>
           </div>
 
           <a

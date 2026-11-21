@@ -142,6 +142,19 @@ export const ProjectsSection: React.FC = () => {
                     {project.description}
                   </p>
 
+                  {project.images && project.images.length > 0 && (
+                    <div className="project-gallery">
+                      {project.images.map((src: string, i: number) => (
+                        <img
+                          key={`${src}-${i}`}
+                          src={src}
+                          alt={`Captura ${i + 1} de ${project.title}`}
+                          loading="lazy"
+                        />
+                      ))}
+                    </div>
+                  )}
+
                   <div className="project-tags" style={{ marginBottom: 0 }}>
                     {project.tags.map((tag: string) => (
                       <span key={tag} className="project-tag">

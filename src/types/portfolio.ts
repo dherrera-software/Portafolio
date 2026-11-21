@@ -4,6 +4,7 @@ export interface Project {
   subtitle: string;
   description: string;
   image: string;
+  images?: string[];
   tags: string[];
   liveUrl?: string;
   githubUrl?: string;
@@ -48,13 +49,9 @@ export interface PersonalInfo {
   role: string;
   specialization: string;
   location: string;
-  flag: string;
   availability: string;
   about: string;
   email: string;
-  phone: string;
-  phoneFormatted: string;
-  whatsappUrl: string;
   github: string;
   githubUsername: string;
   linkedin: string;

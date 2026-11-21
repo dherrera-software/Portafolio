@@ -1,4 +1,4 @@
-# Diego Herrera — Portafolio Virtual Full Stack 🚀
+# Diego Herrera — Portafolio | Desarrollador Full Stack Junior 🚀
 
 > Aplicación web interactiva y moderna desarrollada con **React 19**, **TypeScript** y **Vite**, diseñada con estética *Dark Mode* cyber/futurista, selector de tema claro/oscuro, terminal interactiva ejecutable (`Ctrl + K`) y enlaces directos a proyectos destacados en producción.
 
@@ -36,52 +36,47 @@
 
 ## 🛠️ Stack Técnico del Desarrollador
 
-**Lenguajes**
+**Uso diario**
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-DEA584?style=flat&logo=rust&logoColor=white)
-
-**Frontend**
-
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React_19-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![Tauri 2](https://img.shields.io/badge/Tauri_2-24C8DB?style=flat&logo=tauri&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
-![PrimeReact](https://img.shields.io/badge/PrimeReact-6366F1?style=flat&logo=primereact&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-
-**Backend & Bases de Datos**
-
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React_19-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-5FA04E?style=flat&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
-![Hono](https://img.shields.io/badge/Hono-E36002?style=flat&logo=hono&logoColor=white)
-![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=flat&logo=cloudflare&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
+![REST APIs](https://img.shields.io/badge/REST_APIs-0ea5e9?style=flat&logoColor=white)
+
+**Con experiencia**
+
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
-
-**DevOps & Herramientas**
-
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=flat&logo=github&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=black)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
-![pnpm](https://img.shields.io/badge/pnpm-F69220?style=flat&logo=pnpm&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white)
-
-**Videojuegos**
-
+![PrimeReact](https://img.shields.io/badge/PrimeReact-6366F1?style=flat&logo=primereact&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![Hono](https://img.shields.io/badge/Hono-E36002?style=flat&logo=hono&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=flat&logo=cloudflare&logoColor=white)
+![Tauri 2](https://img.shields.io/badge/Tauri_2-24C8DB?style=flat&logo=tauri&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-DEA584?style=flat&logo=rust&logoColor=white)
 ![Phaser](https://img.shields.io/badge/Phaser_4-8A2BE2?style=flat&logoColor=white)
+![Scrum / Kanban](https://img.shields.io/badge/Agile-Scrum%20%2F%20Kanban-0ea5e9?style=flat)
+
+**Conocimientos base**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET_8-512BD4?style=flat&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=black)
 
 ---
 
@@ -89,10 +84,10 @@
 
 * **Empresoft Peru S.A.C.** · *Practicante de Desarrollo Full Stack (2025 – Presente)*
   - Análisis de lógica de negocio de sistemas legacy y migración hacia arquitecturas web modernas con Next.js (+20% mantenibilidad de código).
-  - Implementación de componentes de interfaz con Next.js y PrimeReact con 100% de precisión visual respecto a Figma.
+  - Implementación de componentes de interfaz con Next.js y PrimeReact, siguiendo fielmente los prototipos de Figma.
   - Control de versiones y despliegue continuo con Git y GitHub Flow.
 * **VAFTEC PERU S.A.C.** · *Practicante Frontend React.js (2024 – 2025)*
-  - Desarrollo frontend de la plataforma web Bigsei con diseño 100% adaptativo.
+  - Desarrollo frontend de la plataforma web Bigsei con diseño responsivo para dispositivos móviles y de escritorio.
   - Librería de componentes modulares en React.js (-15% tiempo de desarrollo).
   - Optimización del rendimiento mediante gestión eficiente de estado y carga diferida de módulos.
 
@@ -100,7 +95,7 @@
 
 ## 🎓 Formación Académica
 
-**SENATI** · *Técnico en Ingeniería de Software con Inteligencia Artificial (Feb. 2024 – Dic. 2026, esperado)*  
+**SENATI** · *Técnico en Ingeniería de Software con Inteligencia Artificial (Feb. 2024 – Jul. 2027, esperado)*  
 Carrera dual orientada a desarrollo escalable, arquitectura de sistemas, modelado de bases de datos relacionales y no relacionales, POO y algoritmia.
 
 ---
@@ -132,7 +127,6 @@ pnpm preview
 ## 📬 Contacto
 
 * 📧 **Email:** [dherrera200106@gmail.com](mailto:dherrera200106@gmail.com)
-* 📱 **WhatsApp:** [+51 912 443 022](https://wa.me/51912443022)
 * 💼 **LinkedIn:** [linkedin.com/in/diego-herrera-282b3a432](https://linkedin.com/in/diego-herrera-282b3a432)
 * 🐙 **GitHub:** [github.com/dherrera-software](https://github.com/dherrera-software)
-* 📍 **Ubicación:** Lima, Perú 🇵🇪
+* 📍 **Ubicación:** Lima, Perú

@@ -1,20 +1,16 @@
 import React from 'react';
 import { TECH_CATEGORIES } from '../data/portfolioData';
-import { Cpu, Code2, Layout, Server, Wrench, Gamepad2 } from 'lucide-react';
+import { Cpu, Code2, Server, Wrench } from 'lucide-react';
 
 export const TechStackSection: React.FC = () => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'Lenguajes':
+      case 'Uso diario':
         return <Code2 size={20} color="var(--accent)" />;
-      case 'Frontend':
-        return <Layout size={20} color="#38bdf8" />;
-      case 'Backend & Bases de Datos':
-        return <Server size={20} color="#10b981" />;
-      case 'DevOps & Herramientas':
+      case 'Con experiencia':
         return <Wrench size={20} color="#f59e0b" />;
-      case 'Videojuegos & Metodologías':
-        return <Gamepad2 size={20} color="#a855f7" />;
+      case 'Conocimientos base':
+        return <Server size={20} color="#10b981" />;
       default:
         return <Cpu size={20} color="var(--accent)" />;
     }
@@ -30,7 +26,7 @@ export const TechStackSection: React.FC = () => {
           </div>
           <h2 className="section-title">Stack Técnico</h2>
           <p className="section-desc">
-            Conjunto de lenguajes, frameworks, bases de datos y herramientas que empleo activamente para construir soluciones robustas y escalables.
+            Tecnologías organizadas según mi nivel de experiencia con cada una.
           </p>
         </div>
 

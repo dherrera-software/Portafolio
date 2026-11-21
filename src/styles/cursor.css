@@ -1,79 +1,264 @@
-/* Ocultar cursor nativo solo cuando se añade la clase o se detecta mouse */
-.custom-cursor-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 99999;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+/* =========================================
+   FUTURISTIC CURSOR (fc- prefix)
+   Punto exacto + anillo con lerp + halo + spotlight
+   ========================================= */
+
+/* Ocultar el cursor nativo globalmente, salvo en campos de texto */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+
+  html.has-custom-cursor
+    :is(
+      input[type='text'],
+      input[type='search'],
+      input[type='email'],
+      input[type='url'],
+      input[type='password'],
+      input[type='number'],
+      input:not([type]),
+      textarea,
+      [contenteditable='true']
+    ) {
+    cursor: auto !important;
+  }
 }
 
-.custom-cursor-wrapper.visible {
+/* ─── Contenedor (por encima de header y terminal) ─── */
+.fc-cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+/* ─── Capas posicionadas por translate3d ─── */
+.fc-dot,
+.fc-ring,
+.fc-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+  opacity: 0;
+}
+
+/* ─── Punto central de 6 px (posición exacta) ─── */
+.fc-dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: rgb(var(--fc-accent));
+  box-shadow: 0 0 8px rgb(var(--fc-accent-2) / 0.65);
+  transition:
+    opacity 150ms var(--ease-out),
+    width 180ms var(--ease-out),
+    height 180ms var(--ease-out),
+    margin 180ms var(--ease-out);
+}
+
+/* ─── Anillo de 34 px ─── */
+.fc-ring {
+  width: 0;
+  height: 0;
+  transition: opacity 180ms var(--ease-out);
+}
+
+/* El tamaño se cambia aquí, nunca con scale en el contenedor */
+.fc-ring__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  transform: translate(-50%, -50%);
+  border: 1.5px solid rgb(var(--fc-accent) / 0.5);
+  border-radius: 50%;
+  background: rgb(var(--fc-accent) / 0.06);
+  backdrop-filter: blur(1px);
+  transition:
+    width 220ms var(--ease-out),
+    height 220ms var(--ease-out),
+    border-radius 220ms var(--ease-out),
+    transform 180ms var(--ease-out),
+    background-color 220ms var(--ease-out),
+    border-color 220ms var(--ease-out);
+}
+
+/* ─── Halo difuso ─── */
+.fc-glow {
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  transition: opacity 250ms var(--ease-out);
+}
+
+.fc-glow span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(var(--fc-accent-2) / 0.12) 0%,
+    rgb(var(--fc-accent) / 0.06) 35%,
+    transparent 68%
+  );
+  filter: blur(10px);
+  transform: scale(0.8);
+  transition: transform 320ms var(--ease-out);
+}
+
+/* ─── Visibilidad ─── */
+.fc-cursor.is-visible .fc-dot,
+.fc-cursor.is-visible .fc-ring,
+.fc-cursor.is-visible .fc-glow {
   opacity: 1;
 }
 
-/* El punto central */
-.cursor-dot {
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent);
+/* ─── Hover interactivo ─── */
+.fc-cursor.is-hovering .fc-dot {
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
 }
 
-/* El anillo exterior con MEZCLA DE COLORES */
-.cursor-ring {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid var(--accent-light);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(2px);
+.fc-cursor.is-hovering .fc-ring__inner {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  border-color: rgb(var(--fc-accent) / 0.8);
+  background: rgb(var(--fc-accent) / 0.1);
 }
 
-/* El anillo cuando pasa por un botón o link */
-.cursor-ring.hover-state {
-  backdrop-filter: none;
-  background-color: var(--accent-light);
-  border-color: var(--accent);
+.fc-cursor.is-hovering .fc-glow span {
+  transform: scale(1.5);
 }
 
-/* El texto dentro del cursor (Ej: "Ver", "Descargar") */
-.cursor-text {
-  color: var(--text-main);
-  font-size: 11px;
+/* ─── Etiqueta ("Ver", "Descargar", data-cursor) ─── */
+.fc-cursor.has-label .fc-ring__inner {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  border-color: rgb(var(--fc-accent) / 0.9);
+  background: rgb(var(--fc-accent) / 0.16);
+}
+
+.fc-cursor.has-label .fc-dot {
+  opacity: 0;
+}
+
+.fc-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
   font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: var(--font-sans);
+  color: var(--text-main);
+  white-space: nowrap;
+  user-select: none;
 }
 
-/* Onda expansiva al hacer clic */
-.cursor-click-ripple {
+/* ─── Click ─── */
+.fc-cursor.is-pressed .fc-dot {
+  width: 3px;
+  height: 3px;
+  margin: -1.5px 0 0 -1.5px;
+}
+
+.fc-cursor.is-pressed .fc-ring__inner {
+  transform: translate(-50%, -50%) scale(0.92);
+}
+
+.fc-cursor.has-label.is-pressed .fc-ring__inner {
+  transform: translate(-50%, -50%);
+}
+
+/* ─── Campos de texto: se oculta el cursor custom ─── */
+.fc-cursor.is-typing .fc-dot,
+.fc-cursor.is-typing .fc-ring,
+.fc-cursor.is-typing .fc-glow {
+  opacity: 0;
+}
+
+/* ─── Ripple: nace en el clic y se quita con onAnimationEnd ─── */
+.fc-ripple {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid rgb(var(--fc-accent-2) / 0.6);
   border-radius: 50%;
-  border: 2px solid var(--accent);
   pointer-events: none;
+  animation: fc-ripple-out 600ms var(--ease-out) forwards;
 }
 
-/* En dispositivos táctiles (móviles y tablets), ocultar el cursor personalizado */
+@keyframes fc-ripple-out {
+  from {
+    transform: scale(0.3);
+    opacity: 0.9;
+  }
+
+  to {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ─── Linterna sobre la rejilla real (40px, offset 0) ─── */
+.fc-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background-image:
+    linear-gradient(to right, rgb(var(--fc-accent) / 0.22) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--fc-accent) / 0.22) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  -webkit-mask-image: radial-gradient(
+    circle 170px at var(--fc-x, -999px) var(--fc-y, -999px),
+    rgb(0 0 0) 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 170px at var(--fc-x, -999px) var(--fc-y, -999px),
+    rgb(0 0 0) 0%,
+    transparent 100%
+  );
+  transition: opacity 300ms var(--ease-out);
+}
+
+.fc-cursor.is-visible .fc-spotlight {
+  opacity: 0.9;
+}
+
+/* ─── Accesibilidad: sin animaciones ─── */
+@media (prefers-reduced-motion: reduce) {
+  .fc-dot,
+  .fc-ring,
+  .fc-ring__inner,
+  .fc-glow,
+  .fc-glow span,
+  .fc-spotlight {
+    transition: none;
+  }
+
+  .fc-ripple {
+    animation-duration: 120ms;
+  }
+}
+
+/* ─── Dispositivos táctiles: nunca mostrar ─── */
 @media (hover: none), (pointer: coarse) {
-  .custom-cursor-wrapper {
+  .fc-cursor {
     display: none !important;
   }
 }

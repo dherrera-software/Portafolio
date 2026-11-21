@@ -6,17 +6,13 @@ const cleanBase = base.endsWith('/') ? base : `${base}/`;
 export const PERSONAL_INFO: PersonalInfo = {
   name: "Diego Herrera Rodríguez",
   shortName: "Diego Herrera",
-  role: "Desarrollador de Software Full Stack",
+  role: "Desarrollador Full Stack Junior",
   specialization: "Next.js · React · TypeScript",
   location: "Lima, Perú",
-  flag: "🇵🇪",
-  availability: "Disponible para proyectos y oportunidades",
+  availability: "Disponible para prácticas profesionales y puestos junior",
   about:
-    "Desarrollador de software full stack especializado en el ecosistema JavaScript/TypeScript (Next.js, React, Node.js). Experiencia demostrada en el diseño de aplicaciones web escalables, integración de APIs RESTful, maquetación de componentes desde Figma y automatización de despliegues en la nube con Docker y CI/CD. Habilidad comprobada para optimizar tiempos de desarrollo en un 15% y modernizar sistemas heredados aplicando metodologías ágiles como Scrum y Kanban. En mis ratos libres también desarrollo videojuegos.",
+    "Desarrollador de software full stack junior, con egreso de SENATI previsto para Julio del 2027, con experiencia en prácticas desarrollando interfaces con React y Next.js, consumiendo APIs REST y migrando sistemas legacy a arquitecturas web modernas. Trabajo con TypeScript, Node.js y bases de datos SQL, y despliego con Docker y GitHub Actions. En mis ratos libres desarrollo videojuegos.",
   email: "dherrera200106@gmail.com",
-  phone: "+51 912 443 022",
-  phoneFormatted: "+51 912 443 022",
-  whatsappUrl: "https://wa.me/51912443022?text=Hola%20Diego,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar",
   github: "https://github.com/dherrera-software",
   githubUsername: "dherrera-software",
   linkedin: "https://linkedin.com/in/diego-herrera-282b3a432",
@@ -93,6 +89,7 @@ export const PROJECTS: Project[] = [
     description:
       "Punto de venta integral para restaurantes y comercio con un módulo gráfico interactivo desarrollado sobre HTML5 Canvas para el mapa y estado de mesas en tiempo real. Construido bajo Next.js App Router para una carga inicial ultra rápida y sincronización de inventarios reactiva.",
     image: "",
+    images: [],
     tags: ["Next.js (App Router)", "TypeScript", "Tailwind CSS", "Canvas API", "REST APIs"],
     isPrivate: true,
     featured: false,
@@ -108,6 +105,7 @@ export const PROJECTS: Project[] = [
     description:
       "Sistema corporativo para la administración y control de contratos de personal y seguimiento de salud ocupacional. Modelado relacional optimizado en PostgreSQL y MySQL, con tablas dinámicas de alto rendimiento, filtrado multicriterio, paginación server-side y exportación de reportes.",
     image: "",
+    images: [],
     tags: ["Next.js", "PrimeReact", "Tailwind CSS", "PostgreSQL", "MySQL", "REST APIs"],
     isPrivate: true,
     featured: false,
@@ -120,61 +118,51 @@ export const PROJECTS: Project[] = [
 
 export const TECH_CATEGORIES: TechCategory[] = [
   {
-    category: "Lenguajes",
+    category: "Uso diario",
     items: [
-      { name: "TypeScript", badgeUrl: "https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" },
-      { name: "JavaScript", badgeUrl: "https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" },
-      { name: "C# (.NET 8)", badgeUrl: "https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" },
-      { name: "Java", badgeUrl: "https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white" },
-      { name: "Python", badgeUrl: "https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" },
-      { name: "PHP", badgeUrl: "https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white" },
-      { name: "SQL", badgeUrl: "https://img.shields.io/badge/SQL-4479A1?style=flat&logoColor=white" },
-      { name: "Rust", badgeUrl: "https://img.shields.io/badge/Rust-DEA584?style=flat&logo=rust&logoColor=white" },
-    ]
-  },
-  {
-    category: "Frontend",
-    items: [
-      { name: "Next.js", badgeUrl: "https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white" },
-      { name: "React 19", badgeUrl: "https://img.shields.io/badge/React_19-20232A?style=flat&logo=react&logoColor=61DAFB" },
-      { name: "Vite", badgeUrl: "https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" },
-      { name: "Tauri 2", badgeUrl: "https://img.shields.io/badge/Tauri_2-24C8DB?style=flat&logo=tauri&logoColor=white" },
-      { name: "Tailwind CSS", badgeUrl: "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white" },
-      { name: "PrimeReact", badgeUrl: "https://img.shields.io/badge/PrimeReact-6366F1?style=flat&logo=primereact&logoColor=white" },
       { name: "HTML5", badgeUrl: "https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" },
       { name: "CSS3", badgeUrl: "https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" },
-    ]
-  },
-  {
-    category: "Backend & Bases de Datos",
-    items: [
+      { name: "TypeScript", badgeUrl: "https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" },
+      { name: "JavaScript", badgeUrl: "https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" },
+      { name: "React 19", badgeUrl: "https://img.shields.io/badge/React_19-20232A?style=flat&logo=react&logoColor=61DAFB" },
+      { name: "Next.js", badgeUrl: "https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white" },
       { name: "Node.js", badgeUrl: "https://img.shields.io/badge/Node.js-5FA04E?style=flat&logo=nodedotjs&logoColor=white" },
-      { name: "Express", badgeUrl: "https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white" },
-      { name: "Hono", badgeUrl: "https://img.shields.io/badge/Hono-E36002?style=flat&logo=hono&logoColor=white" },
-      { name: "Cloudflare Workers", badgeUrl: "https://img.shields.io/badge/Cloudflare_Workers-F38020?style=flat&logo=cloudflare&logoColor=white" },
+      { name: "Tailwind CSS", badgeUrl: "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white" },
       { name: "PostgreSQL", badgeUrl: "https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white" },
-      { name: "MySQL", badgeUrl: "https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white" },
+      { name: "SQL", badgeUrl: "https://img.shields.io/badge/SQL-4479A1?style=flat&logoColor=white" },
+      { name: "Git", badgeUrl: "https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white" },
+      { name: "REST APIs", badgeUrl: "https://img.shields.io/badge/REST_APIs-0ea5e9?style=flat&logoColor=white" },
     ]
   },
   {
-    category: "DevOps & Herramientas",
+    category: "Con experiencia",
     items: [
+      { name: "MySQL", badgeUrl: "https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white" },
       { name: "Docker", badgeUrl: "https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" },
       { name: "GitHub Actions", badgeUrl: "https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white" },
-      { name: "GitHub Pages", badgeUrl: "https://img.shields.io/badge/GitHub_Pages-222222?style=flat&logo=github&logoColor=white" },
-      { name: "Render", badgeUrl: "https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=black" },
-      { name: "Linux (RedHat)", badgeUrl: "https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black" },
-      { name: "Git", badgeUrl: "https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white" },
-      { name: "pnpm", badgeUrl: "https://img.shields.io/badge/pnpm-F69220?style=flat&logo=pnpm&logoColor=white" },
       { name: "Figma", badgeUrl: "https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" },
+      { name: "PrimeReact", badgeUrl: "https://img.shields.io/badge/PrimeReact-6366F1?style=flat&logo=primereact&logoColor=white" },
+      { name: "Vite", badgeUrl: "https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" },
+      { name: "Hono", badgeUrl: "https://img.shields.io/badge/Hono-E36002?style=flat&logo=hono&logoColor=white" },
+      { name: "Cloudflare Workers", badgeUrl: "https://img.shields.io/badge/Cloudflare_Workers-F38020?style=flat&logo=cloudflare&logoColor=white" },
+      { name: "Tauri 2", badgeUrl: "https://img.shields.io/badge/Tauri_2-24C8DB?style=flat&logo=tauri&logoColor=white" },
+      { name: "Rust", badgeUrl: "https://img.shields.io/badge/Rust-DEA584?style=flat&logo=rust&logoColor=white" },
+      { name: "Phaser 4", badgeUrl: "https://img.shields.io/badge/Phaser_4-8A2BE2?style=flat&logoColor=white" },
+      { name: "Scrum / Kanban", badgeUrl: "https://img.shields.io/badge/Agile-Scrum%20%2F%20Kanban-0ea5e9?style=flat" },
     ]
   },
   {
-    category: "Videojuegos & Metodologías",
+    category: "Conocimientos base",
     items: [
-      { name: "Phaser 4", badgeUrl: "https://img.shields.io/badge/Phaser_4-8A2BE2?style=flat&logoColor=white" },
+      { name: "Python", badgeUrl: "https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" },
+      { name: "PHP", badgeUrl: "https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white" },
+      { name: "C#", badgeUrl: "https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" },
       { name: ".NET 8", badgeUrl: "https://img.shields.io/badge/.NET_8-512BD4?style=flat&logoColor=white" },
-      { name: "Scrum & Kanban", badgeUrl: "https://img.shields.io/badge/Agile-Scrum%20%2F%20Kanban-0ea5e9?style=flat" },
+      { name: "Java", badgeUrl: "https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white" },
+      { name: "Spring Boot", badgeUrl: "https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white" },
+      { name: "Express", badgeUrl: "https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white" },
+      { name: "Linux", badgeUrl: "https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black" },
+      { name: "Render", badgeUrl: "https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=black" },
     ]
   }
 ];
@@ -187,7 +175,7 @@ export const EXPERIENCES: Experience[] = [
     location: "Lima, Perú",
     bullets: [
       "Analicé la lógica de negocio de sistemas legacy y ejecuté la migración hacia arquitecturas web modernas con Next.js, incrementando la mantenibilidad del código en un 20%.",
-      "Implementé componentes de interfaz con Next.js y PrimeReact, alcanzando un 100% de precisión visual respecto a los prototipos de Figma.",
+      "Implementé componentes de interfaz con Next.js y PrimeReact, siguiendo fielmente los prototipos de Figma.",
       "Gestioné el control de versiones e integración continua utilizando Git y GitHub Flow para despliegues ágiles de nuevas funcionalidades."
     ]
   },
@@ -197,7 +185,7 @@ export const EXPERIENCES: Experience[] = [
     period: "2024 – 2025",
     location: "Lima, Perú",
     bullets: [
-      "Lideré el desarrollo frontend de la plataforma web Bigsei, garantizando un diseño 100% responsivo para dispositivos móviles y de escritorio.",
+      "Desarrollé el frontend de la plataforma web Bigsei, con diseño responsivo para dispositivos móviles y de escritorio.",
       "Diseñé una librería de componentes modulares en React.js, estandarizando la interfaz global y reduciendo los tiempos de desarrollo en un 15%.",
       "Optimicé el rendimiento y la interactividad de la aplicación mediante la gestión eficiente del estado del cliente y la carga diferida de módulos."
     ]
@@ -207,7 +195,7 @@ export const EXPERIENCES: Experience[] = [
 export const EDUCATION: Education = {
   institution: "SENATI",
   degree: "Técnico en Ingeniería de Software con Inteligencia Artificial",
-  period: "Feb. 2024 – Dic. 2026 (Esperado)",
+  period: "Feb. 2024 – Jul. 2027 (Esperado)",
   location: "Lima, Perú",
   description:
     "Carrera dual enfocada en el desarrollo de software escalable, arquitectura de sistemas, modelado de bases de datos relacionales y no relacionales, POO y algoritmia avanzada.",
