@@ -18,7 +18,7 @@ export const ProjectsSection: React.FC = () => {
           </div>
           <h2 className="section-title">Proyectos Destacados</h2>
           <p className="section-desc">
-            Haz clic en una tarjeta para abrir la aplicación en vivo o descargar el instalador de FileFlow Desktop en una nueva pestaña.
+            Haz clic en una tarjeta para abrir la aplicación en vivo o descargar el instalador de FileFlow Desktop (Beta) en una nueva pestaña.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export const ProjectsSection: React.FC = () => {
                   />
                   <div className="project-badge-overlay">
                     {isDownload ? <Download size={13} /> : <ExternalLink size={13} />}
-                    <span>{isDownload ? 'Descargar instalador' : 'Demo en vivo'}</span>
+                    <span>{isDownload ? 'Instalador Beta' : 'Demo en vivo'}</span>
                   </div>
                 </div>
               )}
@@ -54,7 +54,12 @@ export const ProjectsSection: React.FC = () => {
               <div className="project-content">
                 <div className="project-title-row">
                   <div>
-                    <h3 className="project-title">{project.title}</h3>
+                    <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.45rem' }}>
+                      <h3 className="project-title">{project.title}</h3>
+                      {project.id === 'fileflow-desktop' && (
+                        <span className="project-beta-badge">Beta</span>
+                      )}
+                    </div>
                     <p className="project-subtitle">{project.subtitle}</p>
                   </div>
                   <div className="project-direct-indicator" title={isDownload ? 'Descargar instalador' : 'Abrir proyecto'}>

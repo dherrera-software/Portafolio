@@ -6,7 +6,7 @@ import { GithubIcon, LinkedinIcon } from './icons/BrandIcons';
 export const Hero: React.FC = () => {
   const highlights = [
     { label: 'Enfoque Principal', value: 'Next.js & TypeScript', sub: 'Arquitectura escalable' },
-    { label: 'Conversión FileFlow', value: '50 formatos', sub: 'Web + Desktop · Tauri + Rust' },
+    { label: 'Conversión FileFlow', value: '50 formatos', sub: 'Web + Desktop (Beta) · Tauri + Rust' },
     { label: 'Precisión Figma', value: 'Fiel al diseño', sub: 'Interfaces implementadas desde prototipos de Figma' },
     { label: 'Videojuegos Web', value: 'Phaser 4 Engine', sub: 'IA propia & estética CRT' },
   ];

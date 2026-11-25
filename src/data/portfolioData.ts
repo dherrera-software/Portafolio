@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     title: "FileFlow",
     subtitle: "Plataforma Web de Conversión Universal de Archivos",
     description:
-      "Conversor de archivos de alta fidelidad construido en arquitectura monorepo desacoplada. La versión web ejecuta 13 conversiones compatibles con Cloudflare Workers (Hono + React 19) con validación MIME, políticas CORS y despliegue CI/CD automatizado; cuando se necesitan formatos avanzados, ofrece un instalador de escritorio con motor nativo.",
+      "Conversor de archivos de alta fidelidad construido en arquitectura monorepo desacoplada. La versión web ejecuta 13 conversiones compatibles con Cloudflare Workers (Hono + React 19) con validación MIME, políticas CORS y despliegue CI/CD automatizado; cuando se necesitan formatos avanzados, ofrece acceso a la versión de escritorio en fase Beta con motor nativo en Rust.",
     image: `${cleanBase}images/fileflow.png`,
     tags: [
       "React 19",
@@ -44,25 +44,25 @@ export const PROJECTS: Project[] = [
     highlights: [
       "Arquitectura monorepo (pnpm workspaces) con 13 conversiones compatibles con el Worker.",
       "Procesamiento serverless en Cloudflare Workers (Hono) sin servidores persistentes.",
-      "CI/CD en GitHub Actions hacia GitHub Pages, con opción Desktop para formatos avanzados."
+      "CI/CD en GitHub Actions hacia GitHub Pages, con opción Desktop (Beta) para formatos avanzados."
     ]
   },
   {
     id: "fileflow-desktop",
     title: "FileFlow Desktop",
-    subtitle: "Conversor Nativo Offline con Motor Rust",
+    subtitle: "Conversor Nativo Offline con Motor Rust · Versión Beta",
     description:
-      "Versión de escritorio de FileFlow construida con Tauri 2 y un motor en Rust para conversiones avanzadas sin depender del backend Cloudflare: 50 formatos y 476 rutas disponibles sin conexión. Incluye instalador para Windows y código abierto en GitHub.",
+      "Versión de escritorio en fase Beta construida con Tauri 2 y un motor en Rust para conversiones avanzadas sin conexión a internet ni dependencia del backend: 50 formatos y 476 rutas optimizadas. Actualmente disponible en versión Beta pública con instalador para Windows y código abierto en GitHub.",
     image: `${cleanBase}images/fileflow-desktop.png`,
-    tags: ["Tauri 2", "Rust", "React 19", "TypeScript", "Vite", "GitHub Actions"],
+    tags: ["Tauri 2", "Rust", "React 19", "TypeScript", "Vite", "Beta", "GitHub Actions"],
     downloadUrl: "https://dherrera-software.github.io/FileFlow/downloads/FileFlow-Setup.exe",
     githubUrl: "https://github.com/dherrera-software/FileFlow-Desktop",
-    ctaLabel: "Descargar instalador",
+    ctaLabel: "Descargar instalador (Beta)",
     featured: true,
     highlights: [
-      "Motor nativo en Rust con 50 formatos y 476 rutas de conversión sin conexión.",
-      "Instalador Windows de 3,5 MB servido desde la web de FileFlow.",
-      "Desarrollo abierto en GitHub con releases publicadas para cada versión."
+      "Motor nativo en Rust con 50 formatos y 476 rutas de conversión 100% offline.",
+      "Instalador Beta para Windows (3,5 MB) disponible para descarga directa.",
+      "Desarrollo abierto en GitHub con releases y retroalimentación activa en etapa Beta."
     ]
   },
   {

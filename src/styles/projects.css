@@ -321,6 +321,22 @@
   transition: color var(--duration-fast) var(--ease-out);
 }
 
+.project-beta-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  line-height: 1.2;
+}
+
 .project-card-link:hover .project-title {
   color: var(--accent);
 }

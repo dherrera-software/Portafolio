@@ -80,7 +80,7 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
           <div className="terminal-help-grid">
             <span style={{ color: '#38bdf8' }}>projects</span> <span>Lista los proyectos con enlaces directos</span>
             <span style={{ color: '#38bdf8' }}>fileflow</span> <span>Abre FileFlow (conversor web) en nueva pestaña</span>
-            <span style={{ color: '#38bdf8' }}>desktop</span> <span>Descarga el instalador de FileFlow Desktop (Windows)</span>
+            <span style={{ color: '#38bdf8' }}>desktop</span> <span>Descarga el instalador de FileFlow Desktop (Beta, Windows)</span>
             <span style={{ color: '#38bdf8' }}>pong</span> <span>Abre Pong Retro Arcade en nueva pestaña</span>
             <span style={{ color: '#38bdf8' }}>skills</span> <span>Muestra el stack tecnológico categorizado</span>
             <span style={{ color: '#38bdf8' }}>experience</span> <span>Muestra la experiencia laboral</span>
@@ -159,7 +159,7 @@ export const InteractiveTerminal: React.FC<TerminalProps> = ({ isOpen, onClose, 
           output = (
             <div>
               <p style={{ color: '#34d399', marginBottom: '0.4rem' }}>
-                Descargando FileFlow Desktop (Windows, 3,5 MB)...
+                Descargando FileFlow Desktop Beta (Windows, 3,5 MB)...
               </p>
               <a
                 href={DESKTOP_PROJECT.downloadUrl}
